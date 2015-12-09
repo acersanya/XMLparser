@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Device xmlns="http://www.example.org/InfoBoxSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/InfoBoxSchema DeviceSchema.xsd ">
+  <Name>VideoCard</Name>
+  <Origin>USA</Origin>
+  <Price>120</Price>
+  <Type>
+    <IsOutskirt>true</IsOutskirt>
+    <EnergyConsumption>120</EnergyConsumption>
+    <isCooler>true</isCooler>
+    <AccessoryGroup>Input</AccessoryGroup>
+    <Port>COM</Port>
+  </Type>
+  <IsCritical>false</IsCritical>  
+</Device>
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/InfoBoxSchema"
+	xmlns:tns="http://www.example.org/InfoBoxSchema" elementFormDefault="qualified">
+	
+	 <annotation>
+        <documentation xml:lang="en"> Device schema. 
+        </documentation> 
+    </annotation>
+
+	<element name="Device" type="tns:Device"></element>
+
+	<complexType name="Device">
+		<sequence>
+			<element name="Name" maxOccurs="1" minOccurs="1">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="[A-Za-z]+" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="Origin" maxOccurs="1" minOccurs="1">
+				<simpleType>
+					<restriction base="string">
+						<pattern value="[A-Za-z]+" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="Price" maxOccurs="1" minOccurs="1">
+				<simpleType>
+					<restriction base="integer">
+						<minInclusive value="0" />
+						<maxExclusive value="10500" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="Type" type="tns:complexType"></element>
+			<element name="IsCritical" type="boolean" maxOccurs="1"
+				minOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="complexType">
+		<sequence>
+			<element name="IsOutskirt" type="boolean" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="EnergyConsumption" type="nonNegativeInteger"
+				maxOccurs="1" minOccurs="1">
+			</element>
+			<element name="isCooler" type="boolean" maxOccurs="1"
+				minOccurs="1"></element>
+			<element name="AccessoryGroup">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="Input" />
+						<enumeration value="Output" />
+						<enumeration value="Multimedia" />
+					</restriction>
+				</simpleType>
+			</element>
+			<element name="Port">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="COM" />
+						<enumeration value="USB" />
+						<enumeration value="LPT" />
+					</restriction>
+				</simpleType>
+			</element>
+		</sequence>
+	</complexType>
+</schema>
